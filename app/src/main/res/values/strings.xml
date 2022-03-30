@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">examApp</string>
     <string name="popUpText">팝업 버튼</string>
+    <string name="evaluationText">평가하기</string>
+    <string name="carImageDes">carImage</string>
+    <string name="reserInfoText">예약 정보</string>
+    <string name="rentDateText">대여일</string>
+    <string name="returnDateText">반납일</string>
+    <string name="finishButton">완료</string>
 </resources>
