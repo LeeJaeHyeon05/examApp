@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">examApp</string>
+    <string name="popUpText">팝업 버튼</string>
 </resources>
