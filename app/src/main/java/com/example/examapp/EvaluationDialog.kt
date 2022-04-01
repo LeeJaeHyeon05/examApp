@@ -29,7 +29,6 @@ class EvaluationDialog(context: Context) {
         val spaceView2 = dialog.findViewById<View>(R.id.spaceView2)
         val spaceView1 = dialog.findViewById<View>(R.id.spaceView)
         val beforeFinishButton = dialog.findViewById<Button>(R.id.finishButton)
-        val finishText = dialog.findViewById<TextView>(R.id.finishDialogText)
 
         // 기본 들어갔을때 보여주기 막기
         reviewEditText.visibility = View.GONE
@@ -45,8 +44,14 @@ class EvaluationDialog(context: Context) {
             beforeFinishButton.visibility = View.INVISIBLE
         }
 
-        beforeFinishButton.setOnClickListener {
-            finishDia()
+        if (ratingBar == null) {
+            beforeFinishButton.setBackgroundColor(R.drawable.disable_round)
+            beforeFinishButton.setOnClickListener {
+                Toast.makeText(it.context, "별점 해주세요.", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            beforeFinishButton.setBackgroundColor(R.drawable.round)
+
         }
 
         // 리뷰 버튼 버튼리스너
@@ -54,13 +59,13 @@ class EvaluationDialog(context: Context) {
             reviewButton.setOnClickListener {
                 dialog.dismiss()
                 finishDia()
+                val finishText = dialog.findViewById<TextView>(R.id.finishDialogText)
                 val starNum = ratingBar.rating.toString()
                 finishText.text = "$starNum 점 평가했습니다."
             }
         }
-
-
     }
+
     // 결과창 코드
     private fun finishDia() {
         dialog.show()
