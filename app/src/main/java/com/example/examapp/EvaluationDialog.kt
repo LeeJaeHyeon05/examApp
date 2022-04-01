@@ -72,13 +72,5 @@ class EvaluationDialog(context: Context) {
         finishDiaButton.setOnClickListener {
             dialog.dismiss()
         }
-
-//        val starRating = dialog.findViewById<RatingBar>(R.id.ratingBar)
-//        val reviewButton = dialog.findViewById<Button>(R.id.reviewButton)
-//        val finishText = dialog.findViewById<TextView>(R.id.finishDialogText)
-
-
     }
-
-
 }
