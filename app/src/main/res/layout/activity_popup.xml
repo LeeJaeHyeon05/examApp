@@ -202,7 +202,8 @@
                 android:hint="@string/writeOver10WordsText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:maxLength="500"/>
 
             <Button
                 android:id="@+id/reviewButton"

@@ -44,21 +44,14 @@ class EvaluationDialog(context: Context) {
             beforeFinishButton.visibility = View.INVISIBLE
         }
 
-        if (ratingBar == null) {
-            beforeFinishButton.setBackgroundColor(R.drawable.disable_round)
-            beforeFinishButton.setOnClickListener {
-                Toast.makeText(it.context, "별점 해주세요.", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            beforeFinishButton.setBackgroundColor(R.drawable.round)
-
-        }
-
         // 리뷰 버튼 버튼리스너
         if (ratingBar != null) {
             reviewButton.setOnClickListener {
+                // 이전 다이얼로그 끄기
                 dialog.dismiss()
+                // 결과 다이얼로그 켜기
                 finishDia()
+                // 별점 결과 불러오는 부분
                 val finishText = dialog.findViewById<TextView>(R.id.finishDialogText)
                 val starNum = ratingBar.rating.toString()
                 finishText.text = "$starNum 점 평가했습니다."
@@ -74,8 +67,8 @@ class EvaluationDialog(context: Context) {
         dialog.setCanceledOnTouchOutside(false)
         dialog.setCancelable(false)
 
+        // 완료 버튼
         val finishDiaButton = dialog.findViewById<Button>(R.id.finishDialogButton)
-
         finishDiaButton.setOnClickListener {
             dialog.dismiss()
         }
